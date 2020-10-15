@@ -1,16 +1,3 @@
-
- /* - La tarifa de la habitación por noche es de:
-    100€ para categoría Standard, 
-    120€ Junior Suite y 
-    150€ Suite.
-    - El uso del SPA incrementa la tarifa anterior en 20€.
-    - Una vez tengas la tarifa en función de la categoría y el SPA: 
-    el uso individual reduce un 25% la tarifa por noche, 
-    el uso triple la incrementa en un 25%. 
-    El uso doble la deja tal cual.
-    - Cada noche de parking suma 10€.
- */
-
 const eventHandler = () => {
     //initalizing result variable
     let result;
@@ -23,19 +10,40 @@ const eventHandler = () => {
     const parkingNights = document.getElementById("parking-nights").value;
 
     //Formula
+    //Standard 100€ / Junior Suite 120€ / Suite 150€
     if (roomType === "Standard") result = 100;
     if (roomType === "Junior Suite") result = 120;
     if (roomType === "Suite") result = 150;
 
+    //spa +20€
     if (haveSpa) result = result + 20;
 
+    //single -25% / triple +25%
     if (roomOcupation === "single") result = result - result*0.25;
     else if (roomOcupation === "triple") result = result + result*0.25;
 
+    //*number of nights + 10€ * parking nights
     result = result*numberOfNights + 10*parkingNights;
 
+    //Print result on h2#result
     document.getElementById("result").innerText = result+" €";
 }
 
 //Add event handler to button
 document.getElementById("calculate").addEventListener("click",eventHandler);
+
+//create functions that add event listeners
+const addChangeEventListener = (elementId) => {
+    document.getElementById(elementId).addEventListener("change",eventHandler);
+}
+
+const addKeyUpEventListener = (elementId) => {
+    document.getElementById(elementId).addEventListener("keyup",eventHandler);
+}
+
+//Add event handler to each input & select
+addChangeEventListener("room-type");
+addChangeEventListener("spa");
+addChangeEventListener("room-ocupation");
+addKeyUpEventListener("number-of-nights");
+addKeyUpEventListener("parking-nights");
