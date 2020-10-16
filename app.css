@@ -1,0 +1,31 @@
+body{
+    display: grid;
+    justify-items: center;
+}
+
+main{
+    display: grid;
+    justify-items: left;
+    grid-row-gap: 1%;
+
+}
+
+select, input {
+    margin: 0 0 3% 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+button{
+    padding: 3%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: crimson;
+    color: white;
+}
+
+h2 {
+    color: crimson;
+    font-size: 50px;
+    font-weight: 900;
+}

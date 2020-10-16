@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de reserva</title>
+
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Formulario de reserva</h1>
-    <label for="room-type">Tipo de habitación:</label>
-    <select name="room-type" id="room-type">
-        <option value="Standard">Standard</option>
-        <option value="Junior Suite">Junior Suite</option>
-        <option value="Suite">Suite</option>
-    </select>
-    <label for="spa">Seleccione este checkbox si hará uso del spa</label>
-    <input type="checkbox" name="spa" id="spa">
-    <label for="room-ocupation">Ocupación de la habitación:</label>
-    <select name="room-ocupation" id="room-ocupation">
-        <option value="single">Individual</option>
-        <option value="double">Doble</option>
-        <option value="triple">Triple</option>
-    </select>
-    <label for="number-of-nights">Número de noches:</label>
-    <input type="number" name="number-of-nights" id="number-of-nights">
-    <label for="parking-nights">Número de noches parking:</label>
-    <input type="number" name="parking-nights" id="parking-nights">
-    <button type="submit" id="calculate">Calcular</button>
-    <h2 id="result"></h2>
+    <header>
+        <h1>Formulario de reserva</h1>
+    </header>
+    <main>
+        <label for="room-type">Tipo de habitación:</label>
+        <select name="room-type" id="room-type">
+            <option value="Standard">Standard</option>
+            <option value="Junior Suite">Junior Suite</option>
+            <option value="Suite">Suite</option>
+        </select>
+        <label for="spa">Seleccione este checkbox si hará uso del spa:</label>
+        <input type="checkbox" name="spa" id="spa">
+        <label for="room-ocupation">Ocupación de la habitación:</label>
+        <select name="room-ocupation" id="room-ocupation">
+            <option value="single">Individual</option>
+            <option value="double">Doble</option>
+            <option value="triple">Triple</option>
+        </select>
+        <label for="number-of-nights">Número de noches:</label>
+        <input type="number" name="number-of-nights" id="number-of-nights">
+        <label for="parking-nights">Número de noches parking:</label>
+        <input type="number" name="parking-nights" id="parking-nights">
+        <button type="submit" id="calculate">Calcular</button>
+        <h2 id="result"></h2>
+    </main>
 
     <script src="app.js"></script>
 </body>
